@@ -134,3 +134,6 @@ dist
 
 # Turbo
 .turbo/
+
+# Drizzle
+migrations/
