@@ -1,3 +1,4 @@
+import TRPCProvider from '@repo/api/providers/TRPCProvider'
 import { Ubuntu } from 'next/font/google'
 import React from 'react'
 import './globals.css'
@@ -10,7 +11,9 @@ const ubuntu = Ubuntu({
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className={ubuntu.className}>{children}</body>
+      <body className={ubuntu.className}>
+        <TRPCProvider>{children}</TRPCProvider>
+      </body>
     </html>
   )
 }
