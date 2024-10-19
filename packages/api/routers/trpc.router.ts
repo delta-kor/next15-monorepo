@@ -5,8 +5,10 @@ const t = initTRPC.create({
   errorFormatter: (opts) => {
     const { error, shape } = opts
 
-    if (error.code === 'INTERNAL_SERVER_ERROR')
+    if (error.code === 'INTERNAL_SERVER_ERROR') {
+      console.error(error)
       return { ...shape, message: 'Internal server error' }
+    }
 
     if (error.code === 'UNPROCESSABLE_CONTENT') return { ...shape, message: error.message }
 

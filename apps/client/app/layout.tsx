@@ -12,7 +12,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <body className={ubuntu.className}>
-        <TRPCProvider>{children}</TRPCProvider>
+        <TRPCProvider>
+          <div className="mx-auto max-w-screen-lg p-2">{children}</div>
+        </TRPCProvider>
       </body>
     </html>
   )
